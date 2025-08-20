@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mero Sathi</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='Merosathi.css')}}">
+</head>
+<body class="body">
+    <hr id="line">
+    <header id="header">
+        <img src="{{url_for('static', filename='pic 3.png')}}" id="slogan_pic">
+       <label for="text"id="name_of" >Mero Sathi
+        <img src="{{url_for('static', filename='pic.png')}}" id="title_pic">
+       </label> 
+    </header>
+    <label id="sidebar">
+        <img src="{{url_for('static', filename='pic 4.png')}}" id="top_pic"> <br><br><br> <br> <br>
+        <div id="side_text">
+           <button id="side_button" onclick=" window.location.href='/new_chat'"> New Chat  </button><br> <br>
+           <button id="side_button">  Search Chats</button><br><br>
+            <button id="side_button"> Libary <br></button>
+        </div> 
+        <img src="{{url_for('static', filename='pic 2.png')}}" id="side_pic">
+    </label>
+    <div class="show"> <hr id="line">
+        <div class="parent">
+            <div class="intial_msg">
+            <label for="text" class="initial_display">Hi, I'm Mero Sathi — here to listen, support, and walk with you. 
+                    Whatever you're feeling, you're not alone anymore. 💙"
+            </label>
+            </div> <br>
+           {% for user_input, reply in conversation %}
+                <div class="reply">{{ user_input }}</div>
+                <div class="initial_display">{{ reply }}</div>
+            {% endfor %}
+
+        </div>
+        
+        <div class="input">
+            
+           <div id="input_taken"> 
+                <form method="post" action="/chat">
+                    <input type="text" id="input_box" placeholder="      Ask me anything" name="input_given">
+                    <button type="submit">🡩</button>
+                </form>
+           </div>
+        </div>
+    </div>
+</body>
+</html>
