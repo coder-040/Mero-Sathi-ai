@@ -73,7 +73,7 @@ http://127.0.0.1:5000
 
 ## Screenshot
 
-![Mero Sathi AI Screenshot](static/pic.png)
+![Mero Sathi AI Screenshot](static/preview.png)
 
 ---
 
