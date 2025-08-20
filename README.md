@@ -49,13 +49,26 @@ source .env/bin/activate
 pip install -r requirements.txt
 ```
 
-### 5. Run the Flask app
+### 5. Create your local database
+
+To avoid exposing your chat data, create a new database file locally:
+
+```bash
+python
+>>> from app import db
+>>> db.create_all()
+>>> exit()
+```
+
+This will generate a new `chat.db` in your local `instance` folder.
+
+### 6. Run the Flask app
 
 ```bash
 python app.py
 ```
 
-### 6. Open in your browser
+### 7. Open in your browser
 
 ```
 http://127.0.0.1:5000
@@ -67,7 +80,7 @@ http://127.0.0.1:5000
 
 * Large AI model files (`.gguf`) are stored in the `.models` folder.
 * GitHub has a **50 MB file limit**; for very large models, consider using **Git LFS**: [https://git-lfs.github.com](https://git-lfs.github.com)
-* Make sure your `.env` virtual environment is **not committed** (add to `.gitignore`).
+* Make sure your `.env` virtual environment and local `chat.db` are **not committed** (add to `.gitignore`).
 
 ---
 
